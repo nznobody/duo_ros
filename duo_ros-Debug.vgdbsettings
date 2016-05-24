@@ -18,9 +18,10 @@
         <Transport>SSH</Transport>
         <UserName>ubuntu</UserName>
       </RemoteHost>
-      <LocalDirectory>C:\Users\manu.lange\Source\duo_ros\src</LocalDirectory>
+      <LocalDirectory>C:\Users\manu.lange\Source\duo_ros</LocalDirectory>
       <RemoteDirectory>/home/ubuntu/catkin_ws/src/duo_ros</RemoteDirectory>
       <FileMasks>
+        <string>package.xml</string>
         <string>*.cpp</string>
         <string>*.h</string>
         <string>*.c</string>
@@ -35,18 +36,20 @@
       </FileMasks>
       <TransferNewFilesOnly>true</TransferNewFilesOnly>
       <IncludeSubdirectories>true</IncludeSubdirectories>
+      <SelectedDirectories />
     </MainSourceTransferCommand>
     <AllowChangingHostForMainCommands>false</AllowChangingHostForMainCommands>
-    <SkipBuildIfNoSourceFilesChanged>false</SkipBuildIfNoSourceFilesChanged>
+    <SkipBuildIfNoSourceFilesChanged>true</SkipBuildIfNoSourceFilesChanged>
     <IgnoreFileTransferErrors>false</IgnoreFileTransferErrors>
-    <RemoveRemoteDirectoryOnClean>false</RemoveRemoteDirectoryOnClean>
+    <RemoveRemoteDirectoryOnClean>true</RemoveRemoteDirectoryOnClean>
     <SkipDeploymentTests>false</SkipDeploymentTests>
     <MainSourceDirectoryForLocalBuilds>$(ProjectDir)</MainSourceDirectoryForLocalBuilds>
   </Project>
   <Build xsi:type="com.visualgdb.build.cmake">
     <RelativeSourceDirectory />
     <ConfigurationType>DEBUG</ConfigurationType>
-    <BinaryDirectory>Debug</BinaryDirectory>
+    <BinaryDirectory>../../devel/lib/ros_vgdb_tx1</BinaryDirectory>
+    <MainCMakeTarget>duo_ros</MainCMakeTarget>
     <Toolchain>
       <Name>Default GCC toolchain on 10.0.10.164</Name>
       <UniqueID>com.sysprogs.toolchain.default-gcc</UniqueID>
@@ -80,7 +83,13 @@
     </Toolchain>
     <MakeCommandTemplate>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
-      <Command>make</Command>
+      <RemoteHost>
+        <HostName>10.0.10.164</HostName>
+        <Transport>SSH</Transport>
+        <UserName>ubuntu</UserName>
+      </RemoteHost>
+      <Command>sh</Command>
+      <Arguments>-c ''</Arguments>
       <WorkingDirectory>$(BuildDir)</WorkingDirectory>
       <Environment>
         <Records>
@@ -93,7 +102,14 @@
     </MakeCommandTemplate>
     <CMakeCommand>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
-      <Command>cmake</Command>
+      <RemoteHost>
+        <HostName>10.0.10.164</HostName>
+        <Transport>SSH</Transport>
+        <UserName>ubuntu</UserName>
+      </RemoteHost>
+      <Command>/bin/sh</Command>
+      <Arguments>-c 'cd /home/ubuntu/catkin_ws; catkin_make -DCMAKE_BUILD_TYPE=$(ConfigurationName) -DCATKIN_WHITELIST_PACKAGES="duo_ros"'</Arguments>
+      <WorkingDirectory />
       <Environment>
         <Records>
           <Record>
@@ -104,6 +120,7 @@
       </Environment>
     </CMakeCommand>
     <UpdateSourcesInCMakeFile>true</UpdateSourcesInCMakeFile>
+    <ExplicitDebugTarget>/home/ubuntu/catkin_ws/devel/lib/duo_ros/duo_ros</ExplicitDebugTarget>
     <ExportCompileCommands>false</ExportCompileCommands>
     <DisableToolchainFile>false</DisableToolchainFile>
   </Build>
@@ -177,6 +194,7 @@
     <ShowMessageAfterExecuting>true</ShowMessageAfterExecuting>
   </CustomShortcuts>
   <UserDefinedVariables />
+  <ImportedPropertySheets />
   <CodeSense>
     <Enabled>Unknown</Enabled>
     <ExtraSettings>

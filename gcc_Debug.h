@@ -465,9 +465,6 @@
 #ifndef __ULLACCUM_MIN__
 #define __ULLACCUM_MIN__ 0.0ULLK
 #endif
-#ifndef __GCC_HAVE_DWARF2_CFI_ASM
-#define __GCC_HAVE_DWARF2_CFI_ASM 1
-#endif
 #ifndef __GXX_ABI_VERSION
 #define __GXX_ABI_VERSION 1002
 #endif
@@ -1098,9 +1095,6 @@
 #ifndef __ATOMIC_RELEASE
 #define __ATOMIC_RELEASE 3
 #endif
-#ifndef DEBUG
-#define DEBUG 1
-#endif
 #endif
 
 // --- Include directories begin --- //
@@ -1113,6 +1107,10 @@
 ///usr/lib/gcc/arm-linux-gnueabihf/4.8/include-fixed
 ///usr/include/arm-linux-gnueabihf
 ///usr/include
+//${catkin_INCLUDE_DIRS}
+//${OpenCV_INCLUDE_DIRS}
+//${PCL_INCLUDE_DIRS}
+//${CUDA_INCLUDE_DIRS}
 // --- Include directories end --- //
 
 

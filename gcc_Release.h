@@ -197,9 +197,6 @@
 #ifndef __UINT32_MAX__
 #define __UINT32_MAX__ 4294967295U
 #endif
-#if !defined(__GXX_EXPERIMENTAL_CXX0X__) && defined(__SYSPROGS_CODESENSE__)
-#define __GXX_EXPERIMENTAL_CXX0X__ 1
-#endif
 #ifndef __ULFRACT_MAX__
 #define __ULFRACT_MAX__ 0XFFFFFFFFP-32ULR
 #endif
@@ -238,6 +235,9 @@
 #endif
 #ifndef __SIZEOF_POINTER__
 #define __SIZEOF_POINTER__ 4
+#endif
+#ifndef NDEBUG
+#define NDEBUG 1
 #endif
 #ifndef __GCC_ATOMIC_CHAR16_T_LOCK_FREE
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2
@@ -356,9 +356,6 @@
 #ifndef __BIGGEST_ALIGNMENT__
 #define __BIGGEST_ALIGNMENT__ 8
 #endif
-#ifndef __GNUC_STDC_INLINE__
-#define __GNUC_STDC_INLINE__ 1
-#endif
 #ifndef __DQ_IBIT__
 #define __DQ_IBIT__ 0
 #endif
@@ -400,7 +397,7 @@
 #endif
 //VS2005-2012 treats all files as C++, while VS2013+ can treat C files correctly.
 #if defined(_MSC_VER) && (_MSC_VER < 1800 || defined(__cplusplus))
-#define __cplusplus 201103L
+#define __cplusplus 199711L
 #endif
 #ifndef __DEC128_MAX__
 #define __DEC128_MAX__ 9.999999999999999999999999999999999E6144DL
@@ -464,9 +461,6 @@
 #endif
 #ifndef __ULLACCUM_MIN__
 #define __ULLACCUM_MIN__ 0.0ULLK
-#endif
-#ifndef __GCC_HAVE_DWARF2_CFI_ASM
-#define __GCC_HAVE_DWARF2_CFI_ASM 1
 #endif
 #ifndef __GXX_ABI_VERSION
 #define __GXX_ABI_VERSION 1002
@@ -1068,6 +1062,9 @@
 #ifndef __UINT_FAST16_MAX__
 #define __UINT_FAST16_MAX__ 4294967295U
 #endif
+#ifndef __GNUC_GNU_INLINE__
+#define __GNUC_GNU_INLINE__ 1
+#endif
 #ifndef __GCC_ATOMIC_SHORT_LOCK_FREE
 #define __GCC_ATOMIC_SHORT_LOCK_FREE 2
 #endif
@@ -1098,12 +1095,6 @@
 #ifndef __ATOMIC_RELEASE
 #define __ATOMIC_RELEASE 3
 #endif
-#ifndef NDEBUG
-#define NDEBUG 1
-#endif
-#ifndef RELEASE
-#define RELEASE 1
-#endif
 #endif
 
 // --- Include directories begin --- //
@@ -1116,6 +1107,10 @@
 ///usr/lib/gcc/arm-linux-gnueabihf/4.8/include-fixed
 ///usr/include/arm-linux-gnueabihf
 ///usr/include
+//${catkin_INCLUDE_DIRS}
+//${OpenCV_INCLUDE_DIRS}
+//${PCL_INCLUDE_DIRS}
+//${CUDA_INCLUDE_DIRS}
 // --- Include directories end --- //
 
 
