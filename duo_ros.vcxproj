@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeIncludeSearchPath>$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0005\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\c++\4.8;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\arm-linux-gnueabihf\c++\4.8;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\c++\4.8\backward;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0001\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0003\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0002\include-fixed;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\arm-linux-gnueabihf;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include;${catkin_INCLUDE_DIRS};${OpenCV_INCLUDE_DIRS};${PCL_INCLUDE_DIRS};${CUDA_INCLUDE_DIRS};$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0005\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\c++\4.8;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\arm-linux-gnueabihf\c++\4.8;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\c++\4.8\backward;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0001\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0003\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0002\include-fixed;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include\arm-linux-gnueabihf;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0000\include;${catkin_INCLUDE_DIRS};${OpenCV_INCLUDE_DIRS};${PCL_INCLUDE_DIRS};${CUDA_INCLUDE_DIRS};$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0006\include;$(LOCALAPPDATA)\VisualGDB\RemoteSourceCache\10.0.10.164\0007\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
     <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
@@ -63,14 +63,24 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\DUOInterface.cpp" />
     <ClCompile Include="src\duo_ros.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cfg\Duo.cfg" />
+    <None Include="cfg\duo_left.yaml" />
+    <None Include="cfg\duo_right.yaml" />
     <None Include="duo_ros-Debug.vgdbsettings" />
     <None Include="duo_ros-Release.vgdbsettings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="package.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DUOInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

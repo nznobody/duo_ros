@@ -19,7 +19,7 @@ Release
 *.opensdf
 *.sdf
 *.suo
-*.old
+*.old*
 VisualGDBCache
 CodeDB
 
