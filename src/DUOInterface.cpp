@@ -12,7 +12,7 @@ namespace duo
 	DUOInterface* DUOInterface::pSingleton(0L);
 	
 	DUOInterface::DUOInterface(void)
-		: _camera_nh("duo3d_camera"),
+		: _camera_nh("/"),
 		_it(new image_transport::ImageTransport(_camera_nh))
 	{
 		for (size_t i = 0; i < TWO_CAMERAS; i++)

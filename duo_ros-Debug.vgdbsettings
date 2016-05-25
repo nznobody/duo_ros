@@ -21,6 +21,7 @@
       <LocalDirectory>C:\Users\manu.lange\Source\duo_ros</LocalDirectory>
       <RemoteDirectory>/home/ubuntu/catkin_ws/src/duo_ros</RemoteDirectory>
       <FileMasks>
+        <string>*.launch</string>
         <string>*.yaml</string>
         <string>*.cfg</string>
         <string>package.xml</string>
@@ -38,7 +39,6 @@
       </FileMasks>
       <TransferNewFilesOnly>true</TransferNewFilesOnly>
       <IncludeSubdirectories>true</IncludeSubdirectories>
-      <SelectedDirectories />
     </MainSourceTransferCommand>
     <AllowChangingHostForMainCommands>false</AllowChangingHostForMainCommands>
     <SkipBuildIfNoSourceFilesChanged>true</SkipBuildIfNoSourceFilesChanged>

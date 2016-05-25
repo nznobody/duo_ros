@@ -75,6 +75,7 @@
     <None Include="cfg\duo_right.yaml" />
     <None Include="duo_ros-Debug.vgdbsettings" />
     <None Include="duo_ros-Release.vgdbsettings" />
+    <None Include="launch\duo.launch" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="package.xml" />

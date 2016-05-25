@@ -19,7 +19,7 @@
 #define GAIN		0.0f
 #define EXPOSURE	80.0f
 #define LEDS		20.0f
-#define FPS			30.0f
+#define FPS			20.0f
 #define WIDTH		752
 #define HEIGHT		480
 #define	BINNING		DUO_BIN_NONE
@@ -90,6 +90,10 @@ namespace duo
 		void SetVFlip(bool val){_flipV = val; SetDUOVFlip(_duoInstance, val); }
 		void SetCameraSwap(bool val){_swap = val; SetDUOCameraSwap(_duoInstance, val); }
 		void SetLedPWM(double val){_leds = val; SetDUOLedPWM(_duoInstance, val); }
+		
+		//ROS Exposed
+		boost::shared_ptr<camera_info_manager::CameraInfoManager> GetCamInfoL(){ return _cinfo[0]; }
+		boost::shared_ptr<camera_info_manager::CameraInfoManager> GetCamInfoR(){ return _cinfo[1]; }
 	
 		static const int TWO_CAMERAS	= 2;
 		static const int LEFT_CAM 		= 0;
@@ -124,7 +128,7 @@ namespace duo
 		//General variables
 		bool			_duoInitialized = false;
 		std::string 	_cameraFrame = "duo_frame";
-		static DUOInterface* pSingleton;
+		static			DUOInterface* pSingleton;
 		static const std::string CameraNames[TWO_CAMERAS]; // = {"left","right"};
 		
 		//General member functions

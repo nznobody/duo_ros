@@ -36,6 +36,7 @@
     <None Include="cfg\Duo.cfg" />
     <None Include="cfg\duo_left.yaml" />
     <None Include="cfg\duo_right.yaml" />
+    <None Include="launch\duo.launch" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="package.xml" />
